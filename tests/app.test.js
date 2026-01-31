@@ -1,0 +1,18 @@
+const request = require("supertest");
+const app = require("../src/app");
+
+describe("GET /", () => {
+  it("should return hello message", async () => {
+    const res = await request(app).get("/");
+    expect(res.statusCode).toBe(200);
+    expect(res.body.message).toBe("Hello!");
+  });
+});
+
+describe("GET /products", () => {
+  it("should return products list", async () => {
+    const res = await request(app).get("/products");
+    expect(res.statusCode).toBe(200);
+    expect(res.body.length).toBeGreaterThan(0);
+  });
+});
