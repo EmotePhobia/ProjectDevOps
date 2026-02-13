@@ -6,6 +6,9 @@
     "start": "node src/server.js",
     "test": "jest"
   },
+  "engines": {
+  "node": "20.x"
+  },
   "dependencies": {
     "express": "^4.19.2"
   },
